@@ -1,4 +1,4 @@
-// Vector.c file to be used for lab2
+// Vector.c
 // Gabriel Cadieux
 // Last Modified: 9/12/23
 // Vector.c contains all of code needed to mimic a vector
@@ -27,7 +27,7 @@ Vector *vector_new(void)
     return v;
 }
 
-// Given in the write-up, creates new vector with specified capacity
+// Creates new vector with specified capacity
 Vector *vector_new_with_capacity(int capacity)
 {
     Vector *v = (Vector *)malloc(sizeof(Vector));
@@ -46,7 +46,6 @@ void vector_free(Vector *vec)
 }
 
 // resizes the vector, if our new size exceeds our capacity we must raise the capacity and reallocate the vector
-// Now that I am looking at it, I probably could have called vector_reserve with capacity + 1, but a little redundancy never hurts right?
 // See vector_reserve's comments on the breakdown of the reallocation since the method is the same
 void vector_resize(Vector *vec, int new_size)
 {
@@ -224,9 +223,6 @@ int  vector_find(Vector *vec, int64_t value)
     }
     return -1;
 }
-
-
-// comp_ascending, sort_by, and sort were all given in the write-up
 
 static bool comp_ascending(int64_t left, int64_t right)
 {
